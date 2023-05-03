@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import getBaseUrl from '../getBaseUrl'
 
 const Categoriaform = ({categorias, setCategorias}) => {
 
@@ -13,7 +14,8 @@ const Categoriaform = ({categorias, setCategorias}) => {
                 descripcion
             };
     
-            const baseUrl = "http://localhost:3000"
+            const baseUrl = getBaseUrl()
+            console.log(baseUrl)
             const url = baseUrl + "/categoria";
     
             const respuesta = await fetch(url,{

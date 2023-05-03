@@ -2,7 +2,7 @@ import { useState } from "react";
 import CategoriaForm from "./form";
 import CategoriaListado from "./listado";
 
-export default function CategoriaManager(props) {
+export default function CategoriaManager() {
     const [categorias, setCategorias] = useState([]);
 
     return (
@@ -16,6 +16,7 @@ export default function CategoriaManager(props) {
                 categorias={categorias}
                 setCategorias={setCategorias}
             />
+
         </>
     );
 }

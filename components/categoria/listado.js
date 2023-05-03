@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState } from 'react'
+import getBaseUrl from '../getBaseUrl'
 
 const CategoriaListado = ({categorias, setCategorias}) => {
 
    
 
-    useEffect(() => {
         const cargarDatos = async () => {
             try {
-                const baseUrl = "http://localhost:3000"
+                const baseUrl = getBaseUrl()
                 const url = baseUrl + "/categoria"
                 const respuesta = await fetch(url);
                 if (!respuesta.ok) throw Error("Problemas al recuperar las categorias!")
@@ -18,13 +18,15 @@ const CategoriaListado = ({categorias, setCategorias}) => {
             }
     
         }
+        
+    useEffect(() => {
         cargarDatos();
-    },[categorias, setCategorias])
+    },[])
 
     const eliminar = async (categoria) => {
         try {
             //Averiguar Configuracion.getBaseUrl()
-            const baseUrl = "http://localhost:3000"
+            const baseUrl = getBaseUrl()
             const url = baseUrl + "/categoria?id="+ categoria.id
             const respuesta = await fetch(url, {
                 method: 'DELETE'
@@ -39,7 +41,7 @@ const CategoriaListado = ({categorias, setCategorias}) => {
                 console.log("Categoria borrada de manera exitosa")
             }
             //Actualizar el listado
-            /* cargarDatos(); */
+            cargarDatos();
         
         }
         catch (error) {

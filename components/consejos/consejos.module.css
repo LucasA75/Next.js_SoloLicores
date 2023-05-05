@@ -1,6 +1,6 @@
 .categorias {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas de ancho variable */
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Columnas de ancho variable */
     gap: 30px; /* Espacio entre los elementos */
     justify-content: space-evenly; /* Justifica los elementos horizontalmente */
     align-content: center; /* Centra los elementos verticalmente */
@@ -11,20 +11,28 @@
 .cajita {
     background-color: aliceblue;
     box-shadow: 5px 5px 5px -3px rgba(0, 0, 0, 0.75);
-    height: 240px;
+    height: 200px;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 10px;
-    
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    padding: 30px;
 }
 
 .cajita:hover {
     scale: 1.05;
 }
 
+.imagen{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+}
+
+.texto{
+    display: grid;
+    align-self: center;
+}
 
 .btn {
     width: 100%;

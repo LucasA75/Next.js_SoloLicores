@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
+:root {
+    --blanco: #FFFFFF;
+    --fondoNegro: rgb(15 23 42);
+    --gris-400: rgb(148 163 184);
+    --gris-500: rgb(100 116 139);
+    --gris-300: rgb(203 213 225);
+    --azulPrimario: #0070f0c3;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,10 +18,19 @@
 
 .container_bg {
     min-height: 100vh;
-    background: linear-gradient(125deg, #ECFCFF 0%, #ECFCFF 40%, #B2FCFF calc(40% + 1px), #B2FCFF 60%, #5EDFFF calc(60% + 1px), #5EDFFF 72%, #3E64FF calc(72% + 1px), #3E64FF 100%);
+    background: var(--fondoNegro);
 }
 
 li{
     text-decoration: none;
     list-style-type: none;
+}
+
+.container__perfil{
+    background-color: rgba(15, 15, 15, 0.886);
+    height: 100vh;
+    color: white;
+    display: grid;
+    grid-template-columns: 400px  1fr;
+    
 }

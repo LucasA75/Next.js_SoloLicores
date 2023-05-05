@@ -1,4 +1,7 @@
-export const checkAuth = () => {
+import getBaseUrl from "./getBaseUrl";
+
+export const checkAuth = async () => {
+
     const storageUsuario = localStorage.getItem("usuario"); // string 
     if (storageUsuario == null) {
         // si no está autenticado 
@@ -8,7 +11,7 @@ export const checkAuth = () => {
     const objetoUsuario = JSON.parse(storageUsuario);
     const token = objetoUsuario.user.stsTokenManager.accessToken;
 
-    const baseUrl = 'http://localhost:3000';
+    const baseUrl = getBaseUrl();
     const url = baseUrl + '/usuario/check';
     fetch(url, {
         method: 'GET',

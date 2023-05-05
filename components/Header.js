@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-
+import Image from 'next/image'
 const Header = () => {
   return (
     <header style={{
@@ -18,14 +18,27 @@ const Header = () => {
     }}>
         <h2>SoloLicores</h2>
         <ul style={{
-          display:'flex',
-          gap:'30px'
+          display:'grid',
+          gridTemplateColumns:"1fr 1fr"
         }}>
-          <li>
+          <li style={{
+          display:'grid',
+          gridTemplateColumns:"100px 1fr",
+          alignItems:"center"}}>
             <label>Buscar:</label>
             <input></input>
             </li>
-          <li><Link href="/perfil">Perfil</Link></li>
+          <li style={{
+          display:'grid',
+          alignItems:"center",
+          textAlign:"left",
+          marginLeft:"30px",
+          gridTemplateColumns:"80px 100px"
+        }}>
+          
+        <Link style={{textDecoration:"none" , color:"black"}} href="/perfil">Perfil</Link>
+        <Image src="/person-c.svg" alt="Mi imagen" width={50} height={50} />
+        </li>
         </ul>
     </header>
   )

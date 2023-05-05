@@ -6,17 +6,17 @@ export default function CategoriaManager() {
     const [categorias, setCategorias] = useState([]);
 
     return (
-        <>
+        <div>
             <CategoriaForm 
                 categorias={categorias}
                 setCategorias={setCategorias}
             /> 
-            <hr />
+            <hr /><br></br>
             <CategoriaListado
                 categorias={categorias}
                 setCategorias={setCategorias}
             />
 
-        </>
+        </div>
     );
 }

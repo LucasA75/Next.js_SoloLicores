@@ -1,9 +1,17 @@
 import React from 'react'
+import CategoriaManager from '../components/categoria/CategoriaManager'
+import LayoutPerfil from '../components/layoutPerfil'
+import SeccionesPerfil from '../components/perfil/SeccionesPerfil'
 
-const  Perfil = () => {
+const Perfil = () => {
   return (
-    <div> Perfil</div>
+    <>
+      <LayoutPerfil>
+      <SeccionesPerfil/>
+      <CategoriaManager />
+      </LayoutPerfil>
+    </>
   )
 }
 
-export default  Perfil
+export default Perfil
